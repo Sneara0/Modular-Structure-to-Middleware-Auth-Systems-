@@ -22,6 +22,29 @@ const createUserIntoDB = async (payload: CreateUserPayload) => {
   return result;
 };
 
+
+const getAllUserIntoDB = async () => {
+
+
+
+
+  const result = await pool.query(
+   `SELECT id,name,email,age,created_at,updated_at FROM users` 
+  );
+ // delete result.rows[0].password
+  return result;
+};
+
+
+ console.log("ok?")
+
+
+
+
+
+
+
+
 export const userServices = {
-  createUserIntoDB
+  createUserIntoDB,getAllUserIntoDB
 };
